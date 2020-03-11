@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Things Counter</string>
+    <string name="title">Licznik 2020</string>
+
+    <string name="tvCountApple">Liczba jabłek:</string>
+    <string name="tvCountBanana">Liczba bananów:</string>
+    <string name="tvCountCoffee">Liczba kaw:</string>
+    <string name="strzałkaLewo"><![CDATA[<-]]></string>
+    <string name="strzałkaPrawo"><![CDATA[->]]></string>
+    <string name="fragment1">Jabłka</string>
+    <string name="fragment2">Banany</string>
+    <string name="fragment3">Kawy</string>
+    <string name="startNumber">0</string>
+    <string name="Apple">Jabłka</string>
+    <string name="Banana">Banany</string>
+    <string name="Coffee">Kawy</string>
+
+</resources>
