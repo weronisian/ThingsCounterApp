@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 // przy dodawaniu nowego fragmentu trzeba zmieniać nazwę klasy, layout fragment_ i number zapisywaną w pamięci
 public class FragmentCoffee extends Fragment {
 
@@ -56,6 +59,8 @@ public class FragmentCoffee extends Fragment {
 
                 SharedPreferences prefs = getContext().getSharedPreferences("numbers", Context.MODE_PRIVATE);
                 txtNumber.setText(prefs.getString("numberCoffee", "0"));
+
+                setDate();
             }
         });
 
@@ -75,6 +80,8 @@ public class FragmentCoffee extends Fragment {
 
                 SharedPreferences prefs = getContext().getSharedPreferences("numbers", Context.MODE_PRIVATE);
                 txtNumber.setText(prefs.getString("numberCoffee", "0"));
+
+                setDate();
             }
         });
 
@@ -83,5 +90,13 @@ public class FragmentCoffee extends Fragment {
         txtNumber.setText(prefs.getString("numberCoffee", "0"));
 
         return view;
+    }
+    private void setDate(){
+        // to save date
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+        String savedDate = format.format(new Date());
+        SharedPreferences.Editor editor2 = getContext().getSharedPreferences("dates", Context.MODE_PRIVATE).edit();
+        editor2.putString("date",savedDate);
+        editor2.apply();
     }
 }

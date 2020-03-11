@@ -14,5 +14,7 @@
     <string name="Apple">Jabłka</string>
     <string name="Banana">Banany</string>
     <string name="Coffee">Kawy</string>
+    <string name="ostatniaAktualizacja">Ostatnia aktualizacja</string>
+    <string name="data">data</string>
 
 </resources>

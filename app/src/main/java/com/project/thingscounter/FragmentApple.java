@@ -13,11 +13,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class FragmentApple extends Fragment {
 
     TextView txtNumber;
     Button left, right;
-    String savedText;
+    String savedText, savedDate;
 
     public FragmentApple() {
         // Required empty public constructor
@@ -55,6 +58,8 @@ public class FragmentApple extends Fragment {
 
                 SharedPreferences prefs = getContext().getSharedPreferences("numbers", Context.MODE_PRIVATE);
                 txtNumber.setText(prefs.getString("numberApple", "0"));
+
+                setDate();
             }
         });
 
@@ -74,6 +79,8 @@ public class FragmentApple extends Fragment {
 
                 SharedPreferences prefs = getContext().getSharedPreferences("numbers", Context.MODE_PRIVATE);
                 txtNumber.setText(prefs.getString("numberApple", "0"));
+
+                setDate();
             }
         });
 
@@ -84,4 +91,12 @@ public class FragmentApple extends Fragment {
         return view;
     }
 
+    private void setDate(){
+        // to save date
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+        String savedDate = format.format(new Date());
+        SharedPreferences.Editor editor2 = getContext().getSharedPreferences("dates", Context.MODE_PRIVATE).edit();
+        editor2.putString("date",savedDate);
+        editor2.apply();
+    }
 }
